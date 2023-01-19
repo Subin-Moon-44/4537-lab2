@@ -15,6 +15,7 @@ app.get('/', (req, res) => {
 });
 
 app.post('/chatbot', (req, res) => {
+    res.header('Access-Control-Allow-Origin', '*');
     const message = req.body.message;
     const number = message.match(/\d+/);
     if (number) {
